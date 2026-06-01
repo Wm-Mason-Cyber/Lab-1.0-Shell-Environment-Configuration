@@ -1,5 +1,6 @@
 # all grades reports
 grades_report_*.csv
+lab-1.0.2-shared-container/api/data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
