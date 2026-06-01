@@ -7,6 +7,7 @@ with open("lab-1.0.2-shared-container/api/data/submissions.json") as f:
 by_period = defaultdict(list)
 for entry in data.values():
     passed = sum([
+        1,                                 # Assume L1.0.1: complete
         1,                                        # L1.0.2: submitted
         1 if entry.get("lab_103") else 0,         # L1.0.3: complete
     ])
@@ -17,8 +18,8 @@ for entry in data.values():
         "period":            entry.get("period", "?"),
         "lab_id":            "lab_1_0",
         "passed_assertions": passed,
-        "failed_assertions": 2 - passed,
-        "grade_percentage":  round(passed / 2 * 100, 1),
+        "failed_assertions": 3 - passed,
+        "grade_percentage":  round(passed / 3 * 100, 1),
     })
 
 for period, rows in sorted(by_period.items()):
